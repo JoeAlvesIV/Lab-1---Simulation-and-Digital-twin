@@ -1,0 +1,85 @@
+function sysCall_init()
+    
+    DDrive1=sim.getObjectHandle('DDrive1')
+    DDrive2=sim.getObjectHandle('DDrive2')
+    DDrive3=sim.getObjectHandle('DDrive3')
+    DDrive4=sim.getObjectHandle('DDrive4')
+    DDrive5=sim.getObjectHandle('DDrive5')
+    DDrive6=sim.getObjectHandle('DDrive6')
+    DDrive7=sim.getObjectHandle('DDrive7')
+    DDrive8=sim.getObjectHandle('DDrive8')
+    
+xml = [[
+<ui title="Speed Control" closeable="true" resizable="false" activate="false">
+    <group layout="form" flat="true">
+        <label text="DDrive1 Speed (rad/s): 0.00" id="1"/>
+        <hslider tick-position="above" tick-interval="1" minimum="-10" maximum="10" on-change="rotateDDrive1" id="2"/>
+        <label text="DDrive2 Speed (rad/s): 0.00" id="3"/>
+        <hslider tick-position="above" tick-interval="1" minimum="-10" maximum="10" on-change="rotateDDrive2" id="4"/>
+        <label text="DDrive3 Speed (rad/s): 0.00" id="5"/>
+        <hslider tick-position="above" tick-interval="1" minimum="-10" maximum="10" on-change="rotateDDrive3" id="6"/>
+        <label text="DDrive4 Speed (rad/s): 0.00" id="7"/>
+        <hslider tick-position="above" tick-interval="1" minimum="-10" maximum="10" on-change="rotateDDrive4" id="8"/>
+        <label text="DDrive5 Speed (rad/s): 0.00" id="9"/>
+        <hslider tick-position="above" tick-interval="1" minimum="-10" maximum="10" on-change="rotateDDrive5" id="10"/>
+        <label text="DDrive6 Speed (rad/s): 0.00" id="11"/>
+        <hslider tick-position="above" tick-interval="1" minimum="-10" maximum="10" on-change="rotateDDrive6" id="12"/>
+        <label text="DDrive7 Speed (rad/s): 0.00" id="13"/>
+        <hslider tick-position="above" tick-interval="1" minimum="-10" maximum="10" on-change="rotateDDrive7" id="14"/>
+        <label text="DDrive8 Speed (rad/s): 0.00" id="15"/>
+        <hslider tick-position="above" tick-interval="1" minimum="-10" maximum="10" on-change="rotateDDrive8" id="16"/>
+        
+    </group>
+    <label text="" style="* {margin-left: 400px;}"/>
+</ui>
+]]
+        ui=simUI.create(xml)
+end
+
+function rotateDDrive1(ui,id,newVal)
+    local val = 0.50*newVal
+    sim.setJointTargetVelocity(DDrive1,val)
+    simUI.setLabelText(ui,1,string.format("Arm Speed (rad/s: %.2f",val))
+end
+
+function rotateDDrive2(ui,id,newVal)
+    local val = 0.50*newVal
+    sim.setJointTargetVelocity(DDrive2,val)
+    simUI.setLabelText(ui,1,string.format("Arm Speed (rad/s: %.2f",val))
+end
+
+function rotateDDrive3(ui,id,newVal)
+    local val = 0.50*newVal
+    sim.setJointTargetVelocity(DDrive3,val)
+    simUI.setLabelText(ui,1,string.format("Arm Speed (rad/s: %.2f",val))
+end
+
+function rotateDDrive4(ui,id,newVal)
+    local val = 0.50*newVal
+    sim.setJointTargetVelocity(DDrive4,val)
+    simUI.setLabelText(ui,1,string.format("Arm Speed (rad/s: %.2f",val))
+end
+
+function rotateDDrive5(ui,id,newVal)
+    local val = 0.50*newVal
+    sim.setJointTargetVelocity(DDrive5,val)
+    simUI.setLabelText(ui,1,string.format("Arm Speed (rad/s: %.2f",val))
+end
+
+function rotateDDrive6(ui,id,newVal)
+    local val = 0.50*newVal
+    sim.setJointTargetVelocity(DDrive6,val)
+    simUI.setLabelText(ui,1,string.format("Arm Speed (rad/s: %.2f",val))
+end
+
+function rotateDDrive7(ui,id,newVal)
+    local val = 0.50*newVal
+    sim.setJointTargetVelocity(DDrive7,val)
+    simUI.setLabelText(ui,1,string.format("Arm Speed (rad/s: %.2f",val))
+end
+
+function rotateDDrive8(ui,id,newVal)
+    local val = 0.50*newVal
+    sim.setJointTargetVelocity(DDrive8,val)
+    simUI.setLabelText(ui,1,string.format("Arm Speed (rad/s: %.2f",val))
+end
